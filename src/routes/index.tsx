@@ -1,35 +1,31 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import { About, Experience, Hero, Works } from "../components";
 import InterviewPreparation from "../components/Interview/InterviewPreparation";
-import CategoryPage from "../components/Interview/CategoryPage"; // Import the new component
-import Layout from "../../src/layout/Layout"; // Import the layout component
+import CategoryPage from "../components/Interview/CategoryPage";
+import Layout from "../../src/layout/Layout";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Use Layout to wrap common components */}
         <Route path="/" element={<Layout />}>
           <Route
             index
             element={
-              <div>
+              <>
                 <Hero />
                 <About />
                 <Experience />
                 <Works />
-              </div>
+              </>
             }
           />
-          <Route
-            path="interview-preparation"
-            element={<InterviewPreparation />}
-          />
-          <Route
-            path="interview-preparation/:categoryId"
-            element={<CategoryPage />}
-          />
+          <Route path="interview-preparation">
+            <Route index element={<InterviewPreparation />} />
+            <Route path=":categoryId" element={<CategoryPage />} />
+          </Route>
+          {/* Add catch-all route */}
+          <Route path="*" element={<p>Not Found</p>} />
         </Route>
       </Routes>
     </BrowserRouter>
