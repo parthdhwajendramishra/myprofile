@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { About, Contact, Experience, Hero, Navbar, Works } from "../components";
+import { About, Experience, Hero, Works } from "../components";
 import InterviewPreparation from "../components/Interview/InterviewPreparation";
 import CategoryPage from "../components/Interview/CategoryPage"; // Import the new component
 import Layout from "../../src/layout/Layout"; // Import the layout component

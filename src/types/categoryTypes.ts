@@ -1,6 +1,6 @@
 export interface ContentBlock {
     type: "text" | "code" | "image" | "list";
-    content: string;
+    content: string | string[];
     language?: string; // For code blocks
     alt?: string; // For images
 }

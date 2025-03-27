@@ -18,8 +18,6 @@ const interviewCategories: Category[] = [
 const CategoryPage = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
   const category = interviewCategories.find((cat) => cat.id === categoryId);
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string>("");
-  const [selectedTopic, setSelectedTopic] = useState<QA | null>(null);
   const [selectedQA, setSelectedQA] = useState<QA | null>(null);
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(
     {}
@@ -196,9 +194,7 @@ const CategoryPage = () => {
               <h3 className="text-2xl font-bold text-gray-800">
                 {selectedQA.q}
               </h3>
-              <p className="text-blue-600 capitalize">
-                {selectedSubcategory} • {category?.name}
-              </p>
+              <p className="text-blue-600 capitalize">• {category?.name}</p>
             </div>
 
             <div className="prose max-w-none">

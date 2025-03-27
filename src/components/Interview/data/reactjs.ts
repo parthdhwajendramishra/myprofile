@@ -36,11 +36,53 @@ export const reactData: Subcategory = {
         },
         {
             "q": "What is JSX? How is it different from HTML?",
-            "a": []
+            "a": [{
+                "type": "code",
+                "language": "html",
+                "content": `<div>
+                     <h2> { item.name } </h2>
+                     <p> Price: { item.price } </p>
+                     <p> Quantity: { item.quantity } </p>
+                    </div>     `
+
+            },]
         },
         {
             "q": "What are React components?",
-            "a": []
+            "a": [{
+                "type": "code",
+                "language": "jsx",
+                "content": `import { Html, useProgress } from '@react-three/drei';
+
+const CanvasLoader = () => {
+  const { progress } = useProgress();
+  return (
+    <Html
+      as='div'
+      center
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}>
+      <span className='canvas-loader'></span>
+      <p
+        style={{
+          fontSize: 14,
+          color: '#F1F1F1',
+          fontWeight: 800,
+          marginTop: 40,
+        }}>
+        {progress.toFixed(2)}%
+      </p>
+    </Html>
+  );
+};
+
+export default CanvasLoader; `
+
+            },]
         },
         {
             "q": "What is the difference between class and functional components?",
